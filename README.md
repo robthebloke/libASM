@@ -7,6 +7,7 @@
 * This is not a full blown Intel Assembler (use something like NASM if that's what you need)
 * This library only supports AVX2 instructions that use YMM registers. There is no support for XMM (with exception of single value instructions, e.g. ADDSS)
 * This library does not provide support for assembling PE executable files.
+* This library will ONLY work on CPU's that suppport x64, and AVX2. 
 
 ### So what does this library do?
 
