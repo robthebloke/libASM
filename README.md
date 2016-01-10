@@ -49,7 +49,7 @@ I will eventually get around to building a linux version (don't ask for an ETA),
 
 There are 2 main components to this library:
 
-* assembler_dll.h  -  the header file you'll need to include.
+* lib_asm.h  -  the header file you'll need to include.
 * libASM.dll  - the library itself.
 
 Note: There is no import library for libASM.dll. The dll is always loaded dynamically via LoadLibrary.
@@ -61,7 +61,7 @@ Note: There is no import library for libASM.dll. The dll is always loaded dynami
 The class vpu::AssemblerLib performs all of the intialisation needed to load the library. A minimal example that loads and unloads the dll would be:
 
 <pre><code>
-#include "assembler_dll.h"
+#include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
 
@@ -90,7 +90,7 @@ int main()
 So let's use the assembler to generate the worlds simplest function (one that simply returns!)
 
 <pre><code>
-#include "assembler_dll.h"
+#include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
 
@@ -128,7 +128,7 @@ int main()
 -----------------
 
 <pre><code>
-#include "assembler_dll.h"
+#include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
 
