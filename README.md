@@ -1,13 +1,14 @@
-# libASM - a small lightweight library for runtime assembly on AVX2/x64 instructions
-----------------------------------------------------------------------------------
+# libASM 
+## a small lightweight library for runtime assembly on AVX2/x64 instructions
+------------------------
 
-##First, let's explain what this library is NOT:
+### First, let's explain what this library is NOT:
 
 * This is not a full blown Intel Assembler (use something like NASM if that's what you need)
 * This library only supports AVX2 instructions that use YMM registers. There is no support for XMM (with exception of single value instructions, e.g. ADDSS)
 * This library does not provide support for assembling PE executable files.
 
-##So what does this library do?
+### So what does this library do?
 
 * Generates machine code that can be called via a function pointer in C++.
 * Assembles (most) AVX2 instructions that use YMM registers, and (most) AVX2 instructions tha work on single values (e.g. ADDSS, MULSD, etc).
@@ -16,11 +17,11 @@
 * Provides some minimal support for calling C++ functions (via fastcall, but the procedures are limited)
 * Provides some maths approximations for computing sin, cos, tan, etc (for 8xfloat, 4xdouble). [Accuracy of these methods does not come close to the C standard library. They are cheap approximations!]
 
-##How does this library work?
+### How does this library work?
 
 In effect, this library will assemble a C function whose function prototype is:
 
-  void function(void* RCX_data, void** RDX_function_table);
+  <code>void function(void* RCX_data, void** RDX_function_table);</code>
 
 A single memory block (I'd recommend aligning this to 32bytes) can be used to provide upto 4Gb of arguments, or returned data. The function table is an optional array of function pointers that can call into some predefined C++ functions. The assembled code will be generated within an executable memory page (allocated via VirtualAllocEx), which is then called by casting the memory block to a function pointer, before being called.
 
@@ -59,7 +60,7 @@ Note: There is no import library for libASM.dll. The dll is always loaded dynami
 
 The class vpu::AssemblerLib performs all of the intialisation needed to load the library. A minimal example that loads and unloads the dll would be:
 
-<code>
+<pre><code>
 #include "assembler_dll.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -81,14 +82,14 @@ int main()
   // done
   return 0;
 }
-</code>
+</code></pre>
 
-##Generating some machine code
+### Generating some machine code
 ---------------------------
 
 So let's use the assembler to generate the worlds simplest function (one that simply returns!)
 
-<code>
+<pre><code>
 #include "assembler_dll.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -121,12 +122,12 @@ int main()
   delete g_lib;
   return 0;
 }
-</code>
+</code></pre>
 
 ## Working on some data...
 -----------------
 
-<code>
+<pre><code>
 #include "assembler_dll.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -158,10 +159,10 @@ int main()
     assembler->end();
 
     // this is the data array we will pass to the function when it's being called. This can be accessed via the RCX register.
-	VPU_ALIGN_PREFIX(32)
-	float argument_data[][8] =
-	{
-	  { 0.2f,  0.2f,  0.2f,  0.2f,    0.2f,  0.2f,  0.2f,  0.2f },   // RCX
+    VPU_ALIGN_PREFIX(32)
+    float argument_data[][8] =
+    {
+      { 0.2f,  0.2f,  0.2f,  0.2f,    0.2f,  0.2f,  0.2f,  0.2f },   // RCX
       { 0.1f,  0.1f,  0.1f,  0.1f,    0.1f,  0.1f,  0.1f,  0.1f }    // RCX + 32
     }
     VPU_ALIGN_SUFFIX(32);
@@ -176,6 +177,6 @@ int main()
   delete g_lib;
   return 0;
 }
-</code>
+</code></pre>
 
 That's a basic introduction. The library does support a few more interesting things (such as function calls, custom procedures, etc). The best place to look for information on how they work, is within the code examples.
