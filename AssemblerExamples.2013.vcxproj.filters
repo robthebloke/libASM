@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{20607fc2-18d5-4307-bf07-d62f623f4f93}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{a019c1d8-85ac-4977-bf5d-a72d1f67ffb0}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="./src/00_basics.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="./src/01_add_two_numbers.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="./src/02_short_form_add.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="./src/03_normalise_vec3.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="./src/04_simple_loop.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\05_using_the_stack.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\06_aligning_the_stack.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\07_calling_a_function.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\08_custom_functions.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\09_restoring_registers_after_calls.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\10_using_constants.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\11_subroutines.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\12_forward_jumps.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\examples.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
