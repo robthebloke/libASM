@@ -90,7 +90,7 @@ int main()
 
 So let's use the assembler to generate the worlds simplest function (one that simply returns!)
 
-<pre><code>
+```c++
 #include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -123,12 +123,12 @@ int main()
   delete g_lib;
   return 0;
 }
-</code></pre>
+```
 
 ## Working on some data...
 -----------------
 
-<pre><code>
+```c++
 #include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -178,6 +178,6 @@ int main()
   delete g_lib;
   return 0;
 }
-</code></pre>
+```
 
 That's a basic introduction. The library does support a few more interesting things (such as function calls, custom procedures, etc). The best place to look for information on how they work, is within the code examples.
