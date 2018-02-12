@@ -61,7 +61,7 @@ Note: There is no import library for libASM.dll. The dll is always loaded dynami
 
 The class vpu::AssemblerLib performs all of the intialisation needed to load the library. A minimal example that loads and unloads the dll would be:
 
-<pre><code>
+```c++
 #include "lib_asm.h"
 
 vpu::AssemblerLib* g_lib = 0;
@@ -83,7 +83,7 @@ int main()
   // done
   return 0;
 }
-</code></pre>
+```
 
 ### Generating some machine code
 ---------------------------
